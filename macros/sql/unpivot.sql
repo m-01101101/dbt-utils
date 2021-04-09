@@ -62,7 +62,7 @@ Arguments:
       {%- endfor %}
 
       cast('{{ col.column }}' as {{ dbt_utils.type_string() }}) as {{ field_name }},
-      cast({{ col.column }} as {{ cast_to }}) as {{ value_name }}
+      cast('{{ col.column }}' as {{ cast_to }}) as {{ value_name }}
 
     from {{ relation }}
 
